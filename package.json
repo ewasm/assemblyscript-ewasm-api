@@ -13,8 +13,5 @@
     "name": "Empty AssemblyScript Project",
     "description": "# Empty AssemblyScript Project\n\n[AssemblyScript](https://github.com/AssemblyScript/assemblyscript) compiles strictly typed TypeScript to WebAssembly using Binaryen.\n\nSee the [AssemblyScript wiki](https://github.com/AssemblyScript/assemblyscript/wiki) for further instructions and documentation.",
     "icon": "typescript-lang-file-icon"
-  },
-  "dependencies": {
-    "keccak": "^1.0.2"
   }
 }

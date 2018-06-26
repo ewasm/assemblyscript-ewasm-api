@@ -40,11 +40,9 @@ function do_balance(): void {
 
   var ptrAddress : i32 = allocate_memory(20);
   ethereum_callDataCopy(ptrAddress, 4, 20);
-  var address : i32 = load<i32>(ptrAddress);
-  // make sure that address is 160 bits here,
-  // but storage key is 256 bits so need to pad it somehow
+  //var address : i32 = load<i32>(ptrAddress);
   var ptrBalance : i32 = allocate_memory(32);
-  ethereum_storageLoad(address, ptrBalance);
+  ethereum_storageLoad(ptrAddress, ptrBalance);
   ethereum_return(ptrBalance, 32);
 }
 
