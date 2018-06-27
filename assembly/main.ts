@@ -8,7 +8,7 @@ declare function ethereum_getCallDataSize(): i32;
 declare function ethereum_getCaller(dataOffset: i32): void;
 declare function ethereum_storageStore(pathOffset: i32, valueOffset: i32): void;
 declare function ethereum_storageLoad(pathOffset: i32, resultOffset: i32): void;
-declare function debug_printMemHex(dataOffset: i32, length: i32): void;
+// declare function debug_printMemHex(dataOffset: i32, length: i32): void;
 
 // TODO: need to implement a nice wrapper over the native functions which use native types and handles the memory.
 
@@ -44,8 +44,8 @@ function do_balance(): void {
   ethereum_callDataCopy(ptrAddress, 4, 20);
   var ptrBalance : i32 = allocate_memory(32);
   ethereum_storageLoad(ptrAddress, ptrBalance);
-  debug_printMemHex(ptrAddress, 32);
-  debug_printMemHex(ptrBalance, 32);
+  // debug_printMemHex(ptrAddress, 32);
+  // debug_printMemHex(ptrBalance, 32);
   ethereum_return(ptrBalance, 32);
 }
 
@@ -59,15 +59,15 @@ function do_transfer(): void {
   ethereum_callDataCopy(ptrRecipient, 4, 20);
   var ptrValue : i32 = allocate_memory(32);
   ethereum_callDataCopy(ptrValue, 24, 8);
-  debug_printMemHex(ptrValue, 32);
+  // debug_printMemHex(ptrValue, 32);
   var ptrSenderBalance = allocate_memory(32);
   var ptrRecipientBalance = allocate_memory(32);
   ethereum_storageLoad(ptrSender, ptrSenderBalance);
   ethereum_storageLoad(ptrRecipient, ptrRecipientBalance);
-  debug_printMemHex(ptrSender, 32);
-  debug_printMemHex(ptrRecipient, 32);
-  debug_printMemHex(ptrSenderBalance, 32);
-  debug_printMemHex(ptrRecipientBalance, 32);
+  // debug_printMemHex(ptrSender, 32);
+  // debug_printMemHex(ptrRecipient, 32);
+  // debug_printMemHex(ptrSenderBalance, 32);
+  // debug_printMemHex(ptrRecipientBalance, 32);
 
   var senderBalance = load<i32>(ptrSenderBalance);
   var recipientBalance = load<i32>(ptrRecipientBalance);
