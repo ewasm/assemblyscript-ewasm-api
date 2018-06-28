@@ -4,8 +4,12 @@ gulp.task("build", callback => {
   const asc = require("assemblyscript/bin/asc");
   asc.main([
     "main.ts",
-    "--baseDir", "assembly",
-    "--binaryFile", "../out/main.wasm",
+    "--lib" , "assembly/lib",
+    "--baseDir", "assembly/src",
+    "--binaryFile", "../../build/main.wasm",
+    "--textFile", "../../build/main.wat",
+    "--validate",
+    "--optimize",
     "--sourceMap",
     "--measure"
   ], callback);

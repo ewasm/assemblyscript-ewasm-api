@@ -1,0 +1,6 @@
+{
+  "extends": "../lib/ethereum.json",
+  "include": [
+    "./**/*.ts"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "../../node_modules/assemblyscript/std/assembly.json",
+  "files": [
+    "../../node_modules/assemblyscript/std/assembly.d.ts",
+    "./ethereum.d.ts"
+  ],
+  "include": [
+    "./**/*.ts"
+  ]
+}
