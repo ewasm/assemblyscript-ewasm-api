@@ -24,7 +24,7 @@ export declare function getBlockTimestamp(): i64;
 
 export declare function getTxGasPrice(valueOffset: usize): void;
 
-export declare function getTxOrigin(resultOffest: usize): void;
+export declare function getTxOrigin(resultOffset: usize): void;
 
 export declare function log(dataOffset: usize, length: i32, numberOfTopics: i32, topic1: i32, topic2: i32, topic3: i32, topic4: i32): void;
 
